@@ -1,8 +1,22 @@
 server:
-  port: 9000
+  port: 9100
+  error:
+    include-message: always
+    include-stacktrace: never
 
 spring:
   profiles:
     active: development
   application:
     name: try-spring-oauth2-authorization-server
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_auth
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
